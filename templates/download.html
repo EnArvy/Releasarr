@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Releasarr</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<div style="display: flex; flex-wrap: nowrap;">
+		<a href="/"><img height="100" class="releasarr" src="{{ url_for('static',filename='images/favicon.svg')}}"></a>
+		{% if success %}
+		<h1>Download added to queue</h1>
+		{% else %}
+		<h1>Download failed to add to queue</h1>
+		{% endif %}
+	</div>
+</body>
+
+</html>

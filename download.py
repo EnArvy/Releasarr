@@ -2,6 +2,7 @@ import requests
 from config import sabnzbdurl, sabnzbdkey, newznaburl, newznabkey, sabcat
 from urllib.parse import quote_plus
 import json
+from flask import render_template
 
 def add_nzb(id):
 	global newznaburl
@@ -15,6 +16,8 @@ def add_nzb(id):
 	res = response.content.decode('utf-8').replace("'", '"').lower()
 	res = json.loads(res)
 	if res['nzo_ids'] is not None:
-		return '<body><h1>Download added to queue</h1></body>'
+		# return '<body><h1>Download added to queue</h1></body>'
+		return render_template('download.html', success=True)
 	else:
-		return '<body><h1>Failed to add download to queue</h1></body>'
+		# return '<body><h1>Failed to add download to queue</h1></body>'
+		return render_template('download.html', success=False)
