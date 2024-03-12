@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Releasarr</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<div style="display: flex;">
+		<a href="/"><img height="100" class="releasarr" src="{{ url_for('static',filename='images/favicon.svg')}}"></a>
+		<h1>Results: {{query}}</h1>
+	</div>
+	<div class="card-grid">
+		{% if type=='all' %}
+		{% for result in results %}
+		<a href="/download/{{ result.id }}" class="card" style="color: aliceblue; width: fit-content;">
+			{{ result.title }}
+		</a>
+		{% endfor %}
+		{% else %}
+		{% for result in results %}
+		<a href="/{{type}}/{{ result.id }}" class="card">
+			<img src="{{ result.poster }}" alt="{{ result.title }}" style="width:100%">
+		</a>
+		{% endfor %}
+		{% endif %}
+	</div>
+</body>
+
+</html>

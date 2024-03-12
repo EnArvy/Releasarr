@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Releasarr</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<div style="display: flex; flex-wrap: nowrap;">
+		<a href="/"><img height="100" class="releasarr" src="{{ url_for('static',filename='images/favicon.svg')}}"></a>
+		<form method="POST" autocomplete="off">
+			<input type="text" id="query" name="query" required style="background: transparent; ">
+			<select id="cat" name="cat" class="dropdown" style="padding: 6px;">
+				<option value="movie">Movie</option>
+				<option value="tv">TV</option>
+				<option value="all">All</option>
+			</select>
+			<input type="submit" value="Search">
+		</form>
+	</div>
+	<h1>Movies: Featured</h1>
+	<div class="card-grid">
+		{%for movie in movies%}
+		<a href="/movie/{{ movie.id }}" class="card">
+			<img src="{{ movie.poster }}" alt="{{ movie.title }}" style="width:100%">
+		</a>
+		{%endfor%}
+		<div class="card-align"></div>
+		<div class="card-align"></div>
+	</div>
+	<h1>TV Shows: Featured</h1>
+	<div class="card-grid">
+		{%for tv in tvs%}
+		<a href="/tv/{{ tv.id }}" class="card">
+			<img src="{{ tv.poster }}" alt="{{ tv.title }}" style="width:100%">
+		</a>
+		{%endfor%}
+		<div class="card-align"></div>
+		<div class="card-align"></div>
+	</div>
+</body>
+
+</html>

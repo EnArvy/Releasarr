@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Releasarr</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<div style="display: flex;">
+		<a href="/"><img height="100" class="releasarr" src="{{ url_for('static',filename='images/favicon.svg')}}"></a>
+		<h1>{% if info.title %}{{info.title}}{% else %}{{info.name}}{% endif %} ({% if info.release_date
+			%}{{info.release_date.split('-')[0]}}{% else
+			%}{{info.first_air_date.split('-')[0]}}{% endif %})</h1>
+		</h1>
+	</div>
+	<div class="preview">
+		<img src="https://image.tmdb.org/t/p/w500{{info.poster_path}}" style="height: 3in;">
+		<p>{{info.overview}}</p>
+	</div>
+	<h1> Releases </h1>
+	<table class="releases">
+		{% for release in releases %}
+		<tr>
+			<td>{{ release.title }}</td>
+			<td>{{ release.size }}</td>
+			<td><a href="/download/{{release.id}}" class="download"><img
+						src="{{ url_for('static',filename='images/download.svg')}}" , width="30" height="30"></a></th>
+			</td>
+			{% endfor %}
+	</table>
+</body>
+
+</html>

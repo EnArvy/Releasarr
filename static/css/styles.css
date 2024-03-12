@@ -1,0 +1,119 @@
+*{
+	color: aliceblue;
+}
+html{
+	min-height: 100%;
+}
+body {
+	background: linear-gradient(41deg, #0c0b11 0%, #1a173e 100%);
+	font-family: Plus Jakarta Sans, sans-serif;
+	color: white;
+	margin: 0;
+}
+h1{
+	font-size: 4vw;
+	font-weight: 500;
+	margin: 3rem;
+}
+p{
+	font-size: 2vw;
+	margin: 0 3rem;
+}
+img{
+	border-radius: 0.5rem;
+}
+input{
+	margin: 2rem;
+}
+input[type="text"] {
+	font-family: inherit;
+	width: 40%;
+	border: 0;
+	border-bottom: 2px solid gray;
+	outline: 0;
+	font-size: 5vw;
+	padding: 7px 0;
+	background: transparent;
+	transition: border-color 0.2s;
+  
+	&::placeholder {
+	  color: transparent;
+	}
+  
+	&:placeholder-shown ~ .form__label {
+	  font-size: 5vw;
+	  cursor: text;
+	  top: 20px;
+	}
+}
+input[type="submit"] {
+	font-family: inherit;
+	font-size: 5vw;
+	cursor: pointer;
+	border: 0;
+	padding: 7px 25px;
+	background: #333333;
+	color: white;
+	transition: background 0.2s;
+	border-radius: 2rem;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	width: 2.5in;
+	text-decoration: none;
+	color: black;
+	margin: 10px;
+	border-radius: 1rem;
+}
+.card-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.card-align{
+	transition: 0.3s;
+	width: 2.5in;
+	height: 0;
+	padding: 0;
+}
+
+.releases{
+	font-family: Plus Jakarta Sans, sans-serif;
+	margin: 0 0.5in;
+	border-collapse: separate;
+	border-spacing: 0 0.3in;
+}
+
+.download{
+	padding: 1rem;
+	text-decoration: none;
+	color: white;
+	background-color: aliceblue;
+	border-radius: 1rem;
+}
+.download > img{
+	transform: translateY(30%);
+}
+
+.preview{
+	padding: 1rem;
+	text-decoration: none;
+	color: white;
+	display: flex;
+	border-radius: 1rem;
+	margin: 0 3rem;
+}
+
+.releasarr{
+	background-color: white;
+	margin: 0.5in;
+}
+
+.dropdown{
+	background-color: #333333;
+	font-size: 0.3in;
+	border-radius: 0.15in;
+	width: fit-content;
+}
