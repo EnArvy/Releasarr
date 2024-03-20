@@ -12,7 +12,8 @@ Contributions welcome!
 - Install dependencies using `pip install -r requirements.txt`
 - Fill the environment variables in `config.py`
 - Run as `gunicorn --config gunicorn_config.py releasarr:app`
-
+- Add release terms you want to exclude to Excluded variable and terms you want to Preferred variable. `Preferred = ['hevc','h.265']`, `Excluded = ['Remux','CAM']`
+- By default, releases are sort from lower to higher file size, with Preferred releases appearing at top.
 ## Screenshots
 ![Home](https://i.imgur.com/JdrexC0.png)
 ![Search](https://i.imgur.com/beNaPs3.png)

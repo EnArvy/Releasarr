@@ -1,5 +1,5 @@
 import requests
-from config import newznaburl, newznabkey, Included, Excluded
+from config import newznaburl, newznabkey, Preferred, Excluded
 from tmdb import get_movie, get_tv
 
 def sizeof_fmt(num, suffix="B"):
@@ -21,7 +21,7 @@ def get_movie_releases(movieid):
 	releases = []
 	releasesBest = []
 	for item in response.json()['channel']['item']:
-		if included(item['title']) and not excluded(item['title']):
+		if prefered(item['title']) and not excluded(item['title']):
 			releasesBest.append({
 				'title': item['title'],
 				'size': int(item['enclosure']['@attributes']['length']),
@@ -56,7 +56,7 @@ def get_tv_releases(tvid):
 	releases = []
 	releasesBest = []
 	for item in response.json()['channel']['item']:
-		if included(item['title']) and not excluded(item['title']):
+		if prefered(item['title']) and not excluded(item['title']):
 			releasesBest.append({
 				'title': item['title'],
 				'size': int(item['enclosure']['@attributes']['length']),
@@ -78,10 +78,10 @@ def get_tv_releases(tvid):
 		release['size'] = sizeof_fmt(release['size'])
 	return releasesBest
 
-def included(name:str) -> bool:
+def prefered(name:str) -> bool:
 	words = name.lower().replace('.', ' ').split()
 	for word in words:
-		if word in Included:
+		if word in Preferred:
 			return True
 def excluded(name:str) -> bool:
 	words = name.lower().replace('.', ' ').split()
