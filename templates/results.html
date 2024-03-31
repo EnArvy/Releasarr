@@ -11,9 +11,16 @@
 </head>
 
 <body>
-	<div style="display: flex;">
+	<div style="display: flex; flex-wrap: nowrap;">
 		<a href="/"><img height="100" class="releasarr" src="{{ url_for('static',filename='images/favicon.svg')}}"></a>
-		<h1>Results: {{query}}</h1>
+		<form method="POST" autocomplete="off">
+			<input type="search" id="query" name="query" value="{{query}}" required style="background: transparent; ">
+			<select id="cat" name="cat" class="dropdown" style="padding: 6px;">
+				<option value="movie">Movie</option>
+				<option value="tv">TV</option>
+				<option value="all">All</option>
+			</select>
+		</form>
 	</div>
 	<div class="card-grid">
 		{% if type=='all' %}
@@ -28,6 +35,12 @@
 			<img src="{{ result.poster }}" alt="{{ result.title }}" style="width:100%">
 		</a>
 		{% endfor %}
+		<div class="card-align"></div>
+		<div class="card-align"></div>
+		<div class="card-align"></div>
+		<div class="card-align"></div>
+		<div class="card-align"></div>
+		<div class="card-align"></div>
 		{% endif %}
 	</div>
 </body>

@@ -7,13 +7,12 @@ html{
 body {
 	background: linear-gradient(41deg, #0c0b11 0%, #1a173e 100%);
 	font-family: Plus Jakarta Sans, sans-serif;
-	color: white;
 	margin: 0;
 }
 h1{
 	font-size: 4vw;
 	font-weight: 500;
-	margin: 3rem;
+	margin: 1em;
 }
 p{
 	font-size: 2vw;
@@ -25,14 +24,16 @@ img{
 input{
 	margin: 2rem;
 }
-input[type="text"] {
+input[type="search"] {
 	font-family: inherit;
-	width: 40%;
+	width: 70%;
+	height: 5rem;
+	margin: 0.5in;
 	border: 0;
 	border-bottom: 2px solid gray;
 	outline: 0;
 	font-size: 5vw;
-	padding: 7px 0;
+	padding: 0;
 	background: transparent;
 	transition: border-color 0.2s;
   
@@ -46,31 +47,33 @@ input[type="text"] {
 	  top: 20px;
 	}
 }
-input[type="submit"] {
-	font-family: inherit;
-	font-size: 5vw;
-	cursor: pointer;
-	border: 0;
-	padding: 7px 25px;
-	background: #333333;
-	color: white;
-	transition: background 0.2s;
-	border-radius: 2rem;
-}
 
 .card {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	transition: 0.3s;
-	width: 2.5in;
+	width: 2.4in;
 	text-decoration: none;
 	color: black;
 	margin: 10px;
 	border-radius: 1rem;
 }
+@media only screen and (min-width: 1000px) {
+	.card {
+		width: 2in;
+	}
+	h1 {
+		margin: 0 1em;
+		font-size: 3em;
+	}
+	.card-grid{
+		padding: 0 0.5em;
+	}
+}
 .card-grid {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
+	padding: 0 2rem;
 }
 .card-align{
 	transition: 0.3s;
@@ -98,17 +101,14 @@ input[type="submit"] {
 }
 
 .preview{
-	padding: 1rem;
-	text-decoration: none;
-	color: white;
 	display: flex;
-	border-radius: 1rem;
-	margin: 0 3rem;
+	flex-direction: column;
 }
 
 .releasarr{
 	background-color: white;
-	margin: 0.5in;
+	margin: 3em 3em;
+	height: 5rem;
 }
 
 .dropdown{

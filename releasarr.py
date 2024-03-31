@@ -35,14 +35,14 @@ def home():
 			return render_template('results.html', results=results, query=query, type='all')
 	return render_template('home.html', movies = popular_movies(), tvs = popular_tv())
 
-@app.route('/movie/<id>', methods=['GET'])
+@app.route('/movie/<id>', methods=['GET', 'POST'])
 @auth.login_required
 def movie(id):
 	info = get_movie(id)
 	releases = get_movie_releases(id)
 	return render_template('releases.html', releases=releases, info=info)
 
-@app.route('/tv/<id>', methods=['GET'])
+@app.route('/tv/<id>', methods=['GET', 'POST'])
 @auth.login_required
 def tv(id):
 	info = get_tv(id)

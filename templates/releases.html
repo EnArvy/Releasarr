@@ -13,14 +13,25 @@
 <body>
 	<div style="display: flex;">
 		<a href="/"><img height="100" class="releasarr" src="{{ url_for('static',filename='images/favicon.svg')}}"></a>
+		<form method="POST" autocomplete="off" action="/">
+			<input type="search" id="query" name="query" required style="background: transparent; ">
+			<select id="cat" name="cat" class="dropdown" style="padding: 6px;">
+				<option value="movie">Movie</option>
+				<option value="tv">TV</option>
+				<option value="all">All</option>
+			</select>
+		</form>
+	</div>
+	<div class="preview">
 		<h1>{% if info.title %}{{info.title}}{% else %}{{info.name}}{% endif %} ({% if info.release_date
 			%}{{info.release_date.split('-')[0]}}{% else
 			%}{{info.first_air_date.split('-')[0]}}{% endif %})</h1>
 		</h1>
-	</div>
-	<div class="preview">
-		<img src="https://image.tmdb.org/t/p/w500{{info.poster_path}}" style="height: 3in;">
-		<p>{{info.overview}}</p>
+		<div style="display: flex; flex-direction: row;">
+			<img src="https://image.tmdb.org/t/p/w500{{info.poster_path}}"
+				style="height: 3in; margin: 1rem 0 1rem 3rem; border-radius: 1rem;">
+			<p style="padding: 1rem 0;">{{info.overview}}</p>
+		</div>
 	</div>
 	<h1> Releases </h1>
 	<table class="releases">

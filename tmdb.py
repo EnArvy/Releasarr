@@ -99,7 +99,7 @@ def popular_movies():
 				'overview': item['overview'],
 				'year': item['release_date'][:4]
 			})
-		if len(results) == 5:
+		if len(results) == 6:
 			break
 	return results
 
@@ -124,6 +124,6 @@ def popular_tv():
 				'overview': item['overview'],
 				'year': item['first_air_date'][:4]
 			})
-		if len(results) == 5:
+		if len(results) == 6:
 			break
 	return results

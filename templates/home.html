@@ -14,13 +14,12 @@
 	<div style="display: flex; flex-wrap: nowrap;">
 		<a href="/"><img height="100" class="releasarr" src="{{ url_for('static',filename='images/favicon.svg')}}"></a>
 		<form method="POST" autocomplete="off">
-			<input type="text" id="query" name="query" required style="background: transparent; ">
+			<input type="search" id="query" name="query" required style="background: transparent; ">
 			<select id="cat" name="cat" class="dropdown" style="padding: 6px;">
 				<option value="movie">Movie</option>
 				<option value="tv">TV</option>
 				<option value="all">All</option>
 			</select>
-			<input type="submit" value="Search">
 		</form>
 	</div>
 	<h1>Movies: Featured</h1>
@@ -32,6 +31,10 @@
 		{%endfor%}
 		<div class="card-align"></div>
 		<div class="card-align"></div>
+		<div class="card-align"></div>
+		<div class="card-align"></div>
+		<div class="card-align"></div>
+		<div class="card-align"></div>
 	</div>
 	<h1>TV Shows: Featured</h1>
 	<div class="card-grid">
@@ -40,6 +43,10 @@
 			<img src="{{ tv.poster }}" alt="{{ tv.title }}" style="width:100%">
 		</a>
 		{%endfor%}
+		<div class="card-align"></div>
+		<div class="card-align"></div>
+		<div class="card-align"></div>
+		<div class="card-align"></div>
 		<div class="card-align"></div>
 		<div class="card-align"></div>
 	</div>
