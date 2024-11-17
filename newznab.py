@@ -100,7 +100,7 @@ def search(query:str):
 	for item in response.json()['channel']['item']:
 		results.append({
 			'title': item['title'],
-			'size': int(item['enclosure']['@attributes']['length']),
+			'size': sizeof_fmt(item['enclosure']['@attributes']['length']),
 			'link': item['link'],
 			'id' : item['guid']
 		})

@@ -8,6 +8,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
 		rel="stylesheet">
+	<link rel="icon" href="{{ url_for('static', filename='images/favicon.svg') }}" type="image/vnd.microsoft.icon">
 </head>
 
 <body>
@@ -22,14 +23,34 @@
 			</select>
 		</form>
 	</div>
+
+	{% if type=='all' %}
+	<table style="width: 100%; color: aliceblue;">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Size</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for result in results %}
+			<tr>
+				<td style="word-wrap: break-word; max-width: 200px;">
+					<a href="/download/{{ result.id }}" class="card" style="color: aliceblue;">
+						{{ result.title }}
+					</a>
+				</td>
+				<td>
+					<a href="/download/{{ result.id }}" class="card" style="color: aliceblue;">
+						{{ result.size }}
+					</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{% else %}
 	<div class="card-grid">
-		{% if type=='all' %}
-		{% for result in results %}
-		<a href="/download/{{ result.id }}" class="card" style="color: aliceblue; width: fit-content;">
-			{{ result.title }}
-		</a>
-		{% endfor %}
-		{% else %}
 		{% for result in results %}
 		<a href="/{{type}}/{{ result.id }}" class="card">
 			<img src="{{ result.poster }}" alt="{{ result.title }}" style="width:100%">
@@ -41,8 +62,9 @@
 		<div class="card-align"></div>
 		<div class="card-align"></div>
 		<div class="card-align"></div>
-		{% endif %}
 	</div>
+	{% endif %}
+
 </body>
 
 </html>

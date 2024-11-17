@@ -1,29 +1,36 @@
-*{
+* {
 	color: aliceblue;
 }
-html{
+
+html {
 	min-height: 100%;
 }
+
 body {
 	background: linear-gradient(41deg, #0c0b11 0%, #1a173e 100%);
 	font-family: Plus Jakarta Sans, sans-serif;
 	margin: 0;
 }
-h1{
+
+h1 {
 	font-size: 4vw;
 	font-weight: 500;
 	margin: 1em;
 }
-p{
+
+p {
 	font-size: 2vw;
 	margin: 0 3rem;
 }
-img{
+
+img {
 	border-radius: 0.5rem;
 }
-input{
+
+input {
 	margin: 2rem;
 }
+
 input[type="search"] {
 	font-family: inherit;
 	width: 70%;
@@ -36,15 +43,15 @@ input[type="search"] {
 	padding: 0;
 	background: transparent;
 	transition: border-color 0.2s;
-  
+
 	&::placeholder {
-	  color: transparent;
+		color: transparent;
 	}
-  
-	&:placeholder-shown ~ .form__label {
-	  font-size: 5vw;
-	  cursor: text;
-	  top: 20px;
+
+	&:placeholder-shown~.form__label {
+		font-size: 5vw;
+		cursor: text;
+		top: 20px;
 	}
 }
 
@@ -57,61 +64,81 @@ input[type="search"] {
 	margin: 10px;
 	border-radius: 1rem;
 }
+
 @media only screen and (min-width: 1000px) {
 	.card {
 		width: 2in;
 	}
+
 	h1 {
 		margin: 0 1em;
 		font-size: 3em;
 	}
-	.card-grid{
+
+	.card-grid {
 		padding: 0 0.5em;
 	}
 }
+
 .card-grid {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	padding: 0 2rem;
 }
-.card-align{
+
+.card-align {
 	transition: 0.3s;
 	width: 2.5in;
 	height: 0;
 	padding: 0;
 }
 
-.releases{
+table {
+	width: 100%;
+	color: aliceblue;
+	margin: auto;
+	padding: 20px;
+}
+
+th,
+td {
+	padding: 15px;
+	/* Increase column height */
+	text-align: left;
+}
+
+.releases {
 	font-family: Plus Jakarta Sans, sans-serif;
 	margin: 0 0.5in;
 	border-collapse: separate;
 	border-spacing: 0 0.3in;
 }
 
-.download{
+.download {
 	padding: 1rem;
 	text-decoration: none;
 	color: white;
 	background-color: aliceblue;
 	border-radius: 1rem;
 }
-.download > img{
+
+.download>img {
 	transform: translateY(30%);
 }
 
-.preview{
+.preview {
 	display: flex;
 	flex-direction: column;
 }
 
-.releasarr{
+.releasarr {
 	background-color: white;
 	margin: 3em 3em;
 	height: 5rem;
 }
 
-.dropdown{
+.dropdown {
 	background-color: #333333;
 	font-size: 0.3in;
 	border-radius: 0.15in;
